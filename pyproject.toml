@@ -1,0 +1,38 @@
+[project]
+name = "therapy-companion"
+version = "0.1.0"
+description = "Self-hosted Ollama-based daily reflection companion that pushes back, tracks growth focus areas over time, and helps review WhatsApp thread responses."
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff", "bump-my-version"]
+
+# §10: lint + format every file with ruff. `ruff check` lints; `ruff format`
+# formats. CI runs both in check mode (see .github/workflows/ci.yml).
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+# §4: the 80% coverage floor. `--cov` (in CI) measures this package; the
+# `--cov-fail-under=80` flag in CI fails the PR when coverage drops below it.
+[tool.coverage.run]
+source = ["therapy_companion"]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.bumpversion]
+# §2: the single source of truth for the version; bump with `bump-my-version bump <part>`.
+current_version = "0.1.0"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = 'version = "{current_version}"'
+replace = 'version = "{new_version}"'
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

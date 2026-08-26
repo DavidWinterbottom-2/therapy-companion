@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  # §10: lint + format-check every file. Runs in check mode so an unformatted or
+  # lint-failing file fails the PR rather than being reformatted behind your back.
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .[dev]
+      - run: ruff check .
+      - run: ruff format --check .
+
+
+  # §4: run the tests and enforce the >=80% coverage floor. The gate fails the PR
+  # when coverage drops below 80% — it is not merely reported.
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .[dev]
+      - run: pytest -q --cov --cov-report=term-missing --cov-fail-under=80
+

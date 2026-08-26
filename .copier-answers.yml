@@ -1,0 +1,13 @@
+# Written by Copier — do not edit by hand.
+# Enables `copier update` to pull later template changes into this repo.
+_commit: 4d987a6
+_src_path: /home/user/devcontainer-sandbox
+author: David Winterbottom
+description: Self-hosted Ollama-based daily reflection companion that pushes back,
+    tracks growth focus areas over time, and helps review WhatsApp thread responses.
+has_web_ui: true
+project_slug: therapy-companion
+project_title: Therapy Companion
+stack: python
+year: '2026'
+

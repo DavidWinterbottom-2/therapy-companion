@@ -1,4 +1,8 @@
-"""Self-hosted Ollama-based daily reflection companion that pushes back, tracks growth focus areas over time, and helps review WhatsApp thread responses."""
+"""Self-hosted Ollama-based daily reflection companion.
+
+It pushes back, tracks growth focus areas over time, and helps review
+WhatsApp thread responses.
+"""
 
 
 def hello() -> str:

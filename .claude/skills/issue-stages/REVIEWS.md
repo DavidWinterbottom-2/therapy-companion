@@ -10,7 +10,7 @@ Pick the set by the issue's size, decided at define:
 | Documentation | ✓ | ✓ | a general-purpose agent with the brief below |
 
 Run them **in parallel and in the background**. Brief each one like a peer:
-- the issue, the branch and the diff command (`git diff main...HEAD`, plus any cross-repo branch);
+- the issue, the branch and the diff command (`git diff origin/main...HEAD`, since cloud clones have only `origin/main`; plus any cross-repo branch);
 - the spec paths;
 - what to skip (vendored files such as `.claude/skills/openspec-*`);
 - facts the sandbox can't check (for example, a host it can't reach).

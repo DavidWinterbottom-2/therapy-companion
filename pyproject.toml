@@ -1,6 +1,6 @@
 [project]
 name = "therapy-companion"
-version = "0.1.1"
+version = "0.1.2"
 description = "Self-hosted Ollama-based daily reflection companion that pushes back, tracks growth focus areas over time, and helps review WhatsApp thread responses."
 requires-python = ">=3.12"
 dependencies = []
@@ -26,7 +26,7 @@ show_missing = true
 
 [tool.bumpversion]
 # §2: the single source of truth for the version; bump with `bump-my-version bump <part>`.
-current_version = "0.1.1"
+current_version = "0.1.2"
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
